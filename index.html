@@ -1,0 +1,322 @@
+<!-- 
+	https://www.flickr.com/photos/brunogirin/73014722
+-->
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>A brief history of Bitcoin</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/night.css" id="theme">		
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<!--<link rel="stylesheet" href="css/font-awesome.css">-->
+		<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<link rel="stylesheet" href="css/styles.css">		
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1><i class="fa fa-bitcoin"></i>itcoin</h1>
+					<h3>A quick introduction</h3>
+					<p>
+						<small>28/04/2014 - <a href="http://hakim.se">Víctor Mora Afonso</a></small>
+					</p>
+				</section>
+
+				<section>
+					<h2>Layout</h2>
+					<ul>
+						<li>Introduction</li>
+						<li>How it works</li>
+						<li>Network simulator</li>
+					</ul>
+				</section>
+
+				<section>
+					<section>
+						<p>
+							Decentralized digital currency established in 2009 which allows people to anonymously exchange amounts of bitcoins without the need of a central authority in charge of transactions.
+						</p>
+					</section>
+					<section>
+						<h2>Decentralized</h2>
+						<!--<ul>
+							<li>P2P network</li>
+							<li>No central authority</li>
+							<li>Coins given to those who collaborate</li>
+							<li>Everyone has the history of all transactions</li>
+						</ul>-->						
+						<aside class="notes">
+							The Bitcoin consists on a P2P network. No authority controls Bitcoin. Coins are created using an algorithm and given to those who collaborate to verify transactions. Everyone has the history of all transactions from  begginning of time.
+						</aside>
+					</section>
+					<section>
+						<h2>Anonymous</h2>
+						<!--<ul>
+							<li>Users are identified by public / private key pair</li>
+							<li>Public keys as account numbers</li>
+							<li>Can't map public keys to identities</li>
+							<li>Can track all transactions by certain public key</li>
+						</ul>-->
+						<aside class="notes">
+							Every Bitcoin user has a public / private key pair. Public keys can be seen as an account number to which other users send money. There is no way to map these public keys to identities
+						</aside>
+					</section>
+					<section>
+						<h2>Can't rollback</h2>
+						<aside class="notes">
+							Transactions are irreversible, they can only be refunded by the user receiving the funds. 
+						</aside>
+					</section>
+					<section>
+						<h2>No mandatory transaction fees</h2>
+						<aside class="notes">
+							Unlike credit card payments, merchants do not need to pay for every transaction performed although people can use transactions fees to get their transaction confirmed sooner.
+						</aside>
+					</section>
+					<section>
+						<h2>
+							21 million bitcoins
+						</h2>
+						<aside class="notes">Maximum number of bitcoins that will ever exist. It is limited by design and just like gold it becomes a limited resource.</aside>
+					</section>					
+					<section>
+						<h2>
+							<p>
+								12,698,325 <i class="fa fa-bitcoin"></i> 
+							</p>
+							<p>
+								1 <i class="fa fa-bitcoin"></i> = 456.7 <i class="fa fa-dollar"></i>
+							</p>						
+						</h2>
+						<a href="https://blockexplorer.com/q/totalbc">[blockexplorer]</a>
+					</section>
+					<section>
+						<img src="img/chart.png">
+						<p><a href="https://blockchain.info">[blockchain]</a></p>
+					</section>
+					<section>
+						<h2>What can we buy?</h2>
+						<ul>
+							<li>Food</li>
+							<li>Services</li>
+							<li>Plane tickets (cheapair)</li>
+							<li><a href="http://coinmap.org">coinmap.org</a></li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Under the hood</h2>
+					</section>
+					<section>
+						<h2>Cryptographic tools</h2>
+						<ul>
+							<li>SHA-256</li>
+							<li>ECDSA</li>
+							<li>Merkle trees</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Transactions</h2>
+						<ul>
+							<li>Inputs</li>
+							<li>Outputs</li>
+							<li>Scripting system</li>
+							<li>Broadcast to the network</li>
+							<li>Confirmed by peers</li>
+						</ul>							
+						<aside class="notes">
+							Set of data describing flow of bitcoins from some addresses to other addresses.
+							Through the scripting system, the sender can create very complex conditions that people have to meet in order to claim the output's value.												
+							Set of data describing the flow of bitcoins from some addresses to other addresses.							
+						</aside>
+					</section>
+					<section>
+						<h2>Double spending</h2>
+						<aside class="notes">
+							How to avoid double spending? That is, how to avoid that anyone uses their money twice. To answer that I need to introduce blocks and the block chain
+						</aside>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Blocks</h2>
+						<p>Sets of transactions that are appended to a block chain. To be added to this chain, a block needs to be valid.</p>
+					</section>
+					<section>
+						<h2>Block validation</h2>
+						<ul>
+							<ul>
+								<li>All transactions must be valid</li>
+								<li>Block header hash lower than network difficulty</li>
+							</ul>
+						</ul>
+					</section>
+					<section>
+						<h2>Block mining</h2>
+						<ul>
+							<li>Header nonce parameter</li>
+							<li>Winning the lottery</li>
+							<li>Reward as proof of work</li>
+							<li>Reward halfed every 210,000 blocks</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Difficulty</h2>
+						<ul>
+							<li>Target block hashes must be lower than</li>
+							<li>Network parameter adjusted periodically</li>
+							<li>1 Block every 10 minutes rate</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Block chain</h2>
+						<ul>
+							<li>Shared database containing all transactions</li>
+							<li>Every peer has a copy</li>
+							<li>Transactions are valid when in block chain</li>
+							<li>The deeper, the more difficult to modify</li>
+							<li>Avoid double spending</li>
+						</ul>
+					</section>
+					<section>
+						<blockquote>
+							Global Bitcoin computing power now 256 times faster than top 500 supercomputers, combined <a href="http://www.forbes.com/sites/reuvencohen/2013/11/28/global-bitcoin-computing-power-now-256-times-faster-than-top-500-supercomputers-combined/">[forbes]</a>							
+						</blockquote>
+						<img src="img/mining.jpg">
+						<aside class="notes">
+							Solo mining unpractical -> Mining pools 
+						</aside>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Is it secure?</h2>
+						It is unless someone has the <b>51%</b> computing power of the network. It becomes more unpractical as the number of honest nodes grows.
+
+					</section>
+					<section>
+						<ul>
+							<li>Double spending</li>
+							<li>Block certain transactions</li>
+							<li>Stop being decentralized</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Other attacks</h2>
+						<ul>
+							<li>Double spending on fast payments</li>
+							<li>Network analysis to unveil anonymity </li>
+							<li>DOS attacks to certain peers</li>
+							<li>Selfish attack</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Bitcoin network simulator</h2>
+						<img src="img/network.jpg">
+					</section>
+					<section class="images">
+						<img src="img/simpy.png">			
+						<img src="img/redis.png">
+					</section>
+					<section class="images">
+						<img src="img/socket.png">
+						<img src="img/angular.png">			
+					</section>
+					<section
+>						<img src="img/d3.png">
+					</section>					
+				</section>
+				<section>
+					<h2>Thank you very much!</h2>
+					<img src="">
+					<p>
+						<a href="https://twitter.com/vivictormora">@vivictormora</a>
+					</p>
+				</section>
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'concave', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				//parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				//parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-2.jpg',
+				parallaxBackgroundImage: './img/back2.jpg',
+				parallaxBackgroundSize: '2100px 1200px',
+
+				leap: {
+    				pointerColor   : '#e74c3c',
+    				pointerOpacity: 0
+				},
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/leap/leap.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

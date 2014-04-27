@@ -1,0 +1,7 @@
+.reveal section.images img {
+	border: none;
+	width: 250px;
+	background: none;
+	box-shadow: none;
+	vertical-align: middle;
+}
